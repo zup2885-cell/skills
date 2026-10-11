@@ -1,0 +1,4 @@
+interface:
+  display_name: "Computer Use 操作流程"
+  short_description: "操作桌面应用和浏览器表单，检查插件安装与连接，并验证实际操作结果"
+  default_prompt: "使用 $computer-use-workflow 完成我指定的界面操作，并核对执行结果。"

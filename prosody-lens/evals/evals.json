@@ -1,0 +1,107 @@
+{
+  "skill_name": "prosody-lens",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Analyze this voice memo for prosody and give me practical delivery feedback.",
+      "expected_output": "Runs the audio analyzer, cites generated report artifacts, summarizes pitch, pacing, pauses, emphasis, and limitations.",
+      "files": ["sample-voice.ogg"]
+    },
+    {
+      "id": 2,
+      "prompt": "Visualize the prosody of this narration take.",
+      "expected_output": "Generates an HTML visual report with waveform, energy, pitch contour, pause bands, and summary metrics.",
+      "files": ["sample-narration.wav"]
+    },
+    {
+      "id": 3,
+      "prompt": "Compare these two takes and tell me which one has better clarity and pacing.",
+      "expected_output": "Runs one analysis per file, compares speaking rate when available, pause structure, rough pitch variety, possible acoustic peaks, and explains goal-dependent tradeoffs.",
+      "files": ["take-a.wav", "take-b.wav"]
+    },
+    {
+      "id": 4,
+      "prompt": "Show the speaker's pacing and pause progression across these five voice memos.",
+      "expected_output": "Labels each run with speaker/goal/take metadata, appends compact history records, compares stable trend metrics over time, and states transcript/alignment caveats.",
+      "files": ["memo-1.ogg", "memo-2.ogg", "memo-3.ogg", "memo-4.ogg", "memo-5.ogg"]
+    },
+    {
+      "id": 5,
+      "prompt": "Find candidate prosodic patterns in this accent-analysis clip and visualize the contours.",
+      "expected_output": "Runs the analyzer, reports pattern_analysis candidates and families, shows contour-map visualization in HTML, and avoids accent diagnosis claims.",
+      "files": ["accent-pattern.ogg"]
+    },
+    {
+      "id": 6,
+      "prompt": "This clip is a known prosodic pattern exemplar; visualize it without renaming the pattern.",
+      "expected_output": "Runs with --pattern-label, preserves the analyst-supplied label, surfaces contour candidates, and states fallback-method limitations.",
+      "files": ["known-pattern.ogg"]
+    },
+    {
+      "id": 7,
+      "prompt": "Build a reusable pattern library from this approved clip, then use it to match a future clip.",
+      "expected_output": "Copies or creates a pattern library, runs with --pattern-library and --save-pattern-label, saves an approved exemplar, reruns a future clip against the same library, and reports library match scores without making diagnostic claims.",
+      "files": ["approved-pattern.ogg", "future-clip.ogg"]
+    },
+    {
+      "id": 8,
+      "prompt": "The analyst accepted candidate #2 as a rise-fall focus arc. Save that exact pattern and make the report show it clearly.",
+      "expected_output": "Runs with --pattern-library, --save-pattern-label, and --save-pattern-rank 2; preserves the analyst label; updates the library JSON; and shows the saved exemplar in report.md, report.html, and prosody.json.",
+      "files": ["analyst-reviewed-pattern.ogg"]
+    },
+    {
+      "id": 9,
+      "prompt": "Use Praat and DTW to match this new clip against the approved pattern library.",
+      "expected_output": "Runs with --pitch-method praat when Praat/Parselmouth is installed, uses --library-match-method dtw or hybrid, reports analyzer.pitch_method, match_method, dtw_score, correlation_score, and preserves diagnostic guardrails.",
+      "files": ["approved-pattern-library.json", "new-pattern-clip.ogg"]
+    },
+    {
+      "id": 10,
+      "prompt": "Open the report, approve candidate #2 as a rise-fall focus arc, add a note, and export the review JSON.",
+      "expected_output": "Uses the HTML Pattern Review Workbench, selects candidate #2, sets decision to approved, preserves the analyst label and notes, exports valid JSON with source_audio, candidate rank, signature, sequence, library matches when present, and a suggested_cli using --save-pattern-rank 2.",
+      "files": ["review-pattern-clip.ogg"]
+    },
+    {
+      "id": 11,
+      "prompt": "Hayley does not need all the words. Show the visual-only report and download just the image.",
+      "expected_output": "Uses report.html controls to enable Visual only mode, hides word-heavy summaries/tables/review text, keeps the visual snapshot and charts visible, and verifies Download image exports a non-empty PNG generated locally from the embedded SVG.",
+      "files": ["stakeholder-pattern-clip.ogg"]
+    },
+    {
+      "id": 12,
+      "prompt": "Make this more artifact-like: switch between Map, Card, and Library visual layouts and download the active image.",
+      "expected_output": "Uses the report.html visual layout selector, verifies Map/Card/Library each activates a distinct SVG snapshot, and verifies Download image exports a non-empty PNG for the active selected layout.",
+      "files": ["stakeholder-pattern-clip.ogg"]
+    },
+    {
+      "id": 13,
+      "prompt": "This selected clip is mostly dead air after the actual voice note. Make the chart focus on the part with sound.",
+      "expected_output": "Detects long quiet leading/trailing audio, focuses the analysis/playback copy on the active audio window, records active_audio original/focused durations and trimmed edge seconds in prosody.json, and discloses the focus in report.md/report.html.",
+      "files": ["voice-note-with-dead-tail.ogg"]
+    },
+    {
+      "id": 14,
+      "prompt": "Use this transcript and make the visual-only prosodic pattern image show a few words floating above the inflection arc.",
+      "expected_output": "Runs with --transcript, builds transcript_word_timeline, renders sparse word callouts above Map/Card/Library visual arcs with dots, connectors, and readable translucent cards, verifies the callouts appear in report.html, and verifies Download image exports a PNG containing the active layout.",
+      "files": ["stakeholder-pattern-clip.ogg", "stakeholder-pattern-transcript.txt"]
+    },
+    {
+      "id": 15,
+      "prompt": "The audio has four seconds of speech followed by almost a minute of quiet tail. Make the visual use the spoken part, not the dead air.",
+      "expected_output": "Uses peak-relative and noise-floor-relative active-audio focus, trims the long quiet tail from the analysis/playback copy, records active_audio original/focused durations and trimmed_trailing_seconds, and renders a visual snapshot where the speech occupies the chart instead of being squeezed into the far left.",
+      "files": ["short-speech-long-quiet-tail.mp3"]
+    },
+    {
+      "id": 16,
+      "prompt": "The visual-only pitch graph is too spiky. Make the pitch line more gradual between the points of interest without changing the analysis.",
+      "expected_output": "Keeps raw pitch metrics and JSON time-series available for technical review, but renders Map/Card/Library visual snapshots with a smoothed, downsampled pitch presentation contour and keeps transcript callout dots connected to that smoothed contour.",
+      "files": ["stakeholder-pattern-clip.ogg", "stakeholder-pattern-transcript.txt"]
+    },
+    {
+      "id": 17,
+      "prompt": "The words on the visual-only pitch graph are overlapping. Make the callouts readable.",
+      "expected_output": "Uses collision-aware word-card placement in visual snapshots, separates dense labels into alternate lanes, skips labels when no clean slot exists, and verifies generated SVG word-card rectangles do not overlap.",
+      "files": ["dense-transcript-pattern-clip.ogg", "dense-transcript.txt"]
+    }
+  ]
+}

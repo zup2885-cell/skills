@@ -1,0 +1,10 @@
+
+# TzFilm private state
+tzfilm-douyin-tool/**/node_modules/
+tzfilm-douyin-tool/**/__pycache__/
+tzfilm-douyin-tool/auto-reply/.playwright/
+tzfilm-douyin-tool/auto-reply/data/
+tzfilm-douyin-tool/auto-reply/comments-output/
+tzfilm-douyin-tool/.env
+tzfilm-douyin-tool/*.db*
+tzfilm-douyin-tool/exports/

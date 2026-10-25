@@ -1,0 +1,286 @@
+{
+  "backup_date": "2026-10-24",
+  "scope": "Source and instructions only; no credentials or private runtime data",
+  "files": [
+    {
+      "path": "tzfilm-douyin-tool/LICENSE",
+      "sha256": "1a070b0924f9eb9b5848f2b4c6214709b5e89d3c46ba29cba4656ab28fd70a73",
+      "bytes": 1069
+    },
+    {
+      "path": "tzfilm-douyin-tool/prediction_query.py",
+      "sha256": "e2dbab6a909e34935b37542be7f9c20769a79251d3ab6fc001ad70d1ef1a0667",
+      "bytes": 4853
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto_reply.py",
+      "sha256": "d9d99cbf8940c6fe778ca0a0e9992dc98a8ea28e32b35a21b543717f674ca474",
+      "bytes": 6656
+    },
+    {
+      "path": "tzfilm-douyin-tool/schema.sql",
+      "sha256": "7ca8c2bf6f69e09704985abcba58e81640d3e7e4f309d2bec227259288bfb266",
+      "bytes": 4094
+    },
+    {
+      "path": "tzfilm-douyin-tool/douyin_hourly.py",
+      "sha256": "13bfd8cef571bd218b7ae9f4825b8096569c651f60e72ca5dac438fb4219e486",
+      "bytes": 25486
+    },
+    {
+      "path": "tzfilm-douyin-tool/douyin_new_video_tracker.py",
+      "sha256": "573133ac6204fbe0edb93acd1cb0198db325d9ee1a68bc74920e1e822098393d",
+      "bytes": 24013
+    },
+    {
+      "path": "tzfilm-douyin-tool/README.md",
+      "sha256": "727dd99093f2e862cf5bce032bd2cc75479cb4fbb6a62647ba9e45a63b3e838a",
+      "bytes": 8840
+    },
+    {
+      "path": "tzfilm-douyin-tool/.gitignore",
+      "sha256": "15f3d33c78fd3365f1921c86f866e08fc3e557d0ad6e0b76b6478b689a0b1612",
+      "bytes": 219
+    },
+    {
+      "path": "tzfilm-douyin-tool/SKILL.md",
+      "sha256": "d392f68360acc643381aef529fd1c85200cc196c24019e07ce3b741ddd38b599",
+      "bytes": 1577
+    },
+    {
+      "path": "tzfilm-douyin-tool/.env.example",
+      "sha256": "85fe0e5ec4f1cd421a33dce512501278a59cc4d09abd7d9307d160f7c5bfc5bd",
+      "bytes": 306
+    },
+    {
+      "path": "tzfilm-douyin-tool/com.hermes.douyin-tracker.plist",
+      "sha256": "47c750cab2427ae84b2667bf9e49a64756e506f48424b90d6ec6da3209a4d814",
+      "bytes": 992
+    },
+    {
+      "path": "tzfilm-douyin-tool/UPSTREAM.json",
+      "sha256": "a0e84e85779741f68e6a1e412c11d84f64dbc0aab8d9324afa04589dbfa10daa",
+      "bytes": 3411
+    },
+    {
+      "path": "tzfilm-douyin-tool/feishu_sync.py",
+      "sha256": "b562f410a9ea5d1e25669c668eee39b59135a51b1c5b09a486c939ed96ba2b60",
+      "bytes": 15544
+    },
+    {
+      "path": "tzfilm-douyin-tool/references/original.gitignore",
+      "sha256": "e8a902b5f2de30369fceb49e84935037fbb5c546909efcd576a1ed2f5b8dab82",
+      "bytes": 63
+    },
+    {
+      "path": "tzfilm-douyin-tool/references/original-creator-SKILL.md",
+      "sha256": "fdcb8fa25358897df4e3d389eee22237e34595384a5dd9f61231a7b248928ada",
+      "bytes": 29972
+    },
+    {
+      "path": "tzfilm-douyin-tool/references/local-workflow.md",
+      "sha256": "dcb4d583f653ac9ad637b2a252f6a209fe98b3acee41322eef0e5a2c245d3ac9",
+      "bytes": 5352
+    },
+    {
+      "path": "tzfilm-douyin-tool/local-runtime/prediction_query.py",
+      "sha256": "30245d832d860d5c0845665bf971ec0ae394ca8c59488284176f47990f98b3d4",
+      "bytes": 5194
+    },
+    {
+      "path": "tzfilm-douyin-tool/local-runtime/douyin_hourly.py",
+      "sha256": "0b0b533f96c90b0bce789e3d162875d0cd2cd286c8031abc067eede96ad5e93a",
+      "bytes": 26292
+    },
+    {
+      "path": "tzfilm-douyin-tool/local-runtime/douyin_new_video_tracker.py",
+      "sha256": "31f538165c13e2ad716d490b4e64f43d86c6b8c21ed892e0b7b6fa08975bc592",
+      "bytes": 24921
+    },
+    {
+      "path": "tzfilm-douyin-tool/local-runtime/requirements.lock.txt",
+      "sha256": "e9f4784d39bcdb36bc9bf6c4631aa074950393565588448726b8ad4f4f8dd2c3",
+      "bytes": 48
+    },
+    {
+      "path": "tzfilm-douyin-tool/local-runtime/feishu_sync.py",
+      "sha256": "018c5ebe4c4dba1cf878661bf456873f5c03a1c7ffa3178396adacbd4dd92ab6",
+      "bytes": 16325
+    },
+    {
+      "path": "tzfilm-douyin-tool/agents/openai.yaml",
+      "sha256": "1428aac66d9bdace3d4677cf3ffc2318acec113205642e5bb299ddc32dec107d",
+      "bytes": 165
+    },
+    {
+      "path": "tzfilm-douyin-tool/scripts/dy_follower_js_v2.js",
+      "sha256": "cc321fcd80c0ec96371cac0e0ee72841ec4bd91fdf8186270c5c171eec965d90",
+      "bytes": 359
+    },
+    {
+      "path": "tzfilm-douyin-tool/skills/feishu-douyin-sync.md",
+      "sha256": "a8b124e73f052fb66cec54648ecc5abb4d6fe6ea6a151ccf2cc0f30727db6d8f",
+      "bytes": 14568
+    },
+    {
+      "path": "tzfilm-douyin-tool/skills/douyin-video-prediction.md",
+      "sha256": "f142f88e60fd19eab6133529e221d8382c639db14c14fc56dc46091af02441d9",
+      "bytes": 21058
+    },
+    {
+      "path": "tzfilm-douyin-tool/skills/douyin-auto-reply.md",
+      "sha256": "5e6e422689787e5240f3ff89861477fff8b5dc3726634a6ce575a3a021a5974c",
+      "bytes": 11325
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/.gitignore",
+      "sha256": "f0601365fcec5ba0cde731f52afea70eeb81263567d7d5a6d9bfe0abb89223a9",
+      "bytes": 50
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/package-lock.json",
+      "sha256": "9b1d978c7879844a2f2ba148928b1d27838cb739da8324d2f58ab44b5d3f2fca",
+      "bytes": 17675
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/package.json",
+      "sha256": "ad96578ce06391349a1b4e4f6f982bc10bc20e4164f0985e3d851cebda7859d6",
+      "bytes": 611
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/cli-options.mjs",
+      "sha256": "b5f6341e395ecdadb25ee1e1c0cfc47a80793251d6343e8de17efffb1f8b2d73",
+      "bytes": 821
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/reply-douyin-comments.mjs",
+      "sha256": "7aec9dfe0e0ae64ebafde562770563398a6d52a79741499640857c18a0fd7b69",
+      "bytes": 2462
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/export-douyin-comments.mjs",
+      "sha256": "b56fb81c26313d0da17eaa1034769a65ba04627a72617a2bba80020088ca15ae",
+      "bytes": 2369
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/comment-workflow.mjs",
+      "sha256": "7f48046ee4018d96b73f135502455d4ac6f1f9d8f80512e02e330fdb7ed8442d",
+      "bytes": 18635
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/auth-douyin.mjs",
+      "sha256": "7c38f486cde1524a4c7eea9666efccc99bd1e017feccd9c95a86e12f993b8e57",
+      "bytes": 3321
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/douyin-browser.mjs",
+      "sha256": "81d5be9ae6e19928c514882401831a6a1895486e5b86aa0f61b2d48b9fb1f328",
+      "bytes": 1808
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/db.mjs",
+      "sha256": "8d9c49b8053796447cd442988e4892f2e066058bc2d473983309d2376fbb3e3f",
+      "bytes": 1340
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/comment-snapshot.mjs",
+      "sha256": "8ebc57a1e531a47d4e2a3fa30aad916bd85b442132c567355934d4427f4fe6fc",
+      "bytes": 16337
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/works-panel.mjs",
+      "sha256": "71f65410ae99b1b610fca36fc605929c9de86fe6493d3e06ec442c4d1b0387db",
+      "bytes": 22107
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/result-store.mjs",
+      "sha256": "531dcbe85ddab7d3aeb1b442bdddb8686df03a5eff116a58f927acb7ba1906a9",
+      "bytes": 8321
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/db-ops.mjs",
+      "sha256": "4c26e6ef4e3c14a8641c1ea7462d17803435d74a15010037a8cb76e80899f567",
+      "bytes": 4206
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/common.mjs",
+      "sha256": "69c9b00810d70274937d60e7d52277b8e2ba30db0929b09d53a5cd809ebb02fd",
+      "bytes": 9231
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/comment-page.mjs",
+      "sha256": "302f144c00376fc9bcece60afb1ab02b2ec4526745d79e3542e9494f1e29ba37",
+      "bytes": 2212
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/comment-ops.mjs",
+      "sha256": "38f06c6fbabdfcd169e463be6d897967e4480c04e84e170d735e97fe21b2543a",
+      "bytes": 32146
+    },
+    {
+      "path": "tzfilm-douyin-tool/auto-reply/src/lib/reply-flow.mjs",
+      "sha256": "d95f8e00841156fdcd744cd870ad5d2016b07d11b3878f8378c316f8e700d7e3",
+      "bytes": 26756
+    },
+    {
+      "path": "douyin-auto-reply/LICENSE",
+      "sha256": "1a070b0924f9eb9b5848f2b4c6214709b5e89d3c46ba29cba4656ab28fd70a73",
+      "bytes": 1069
+    },
+    {
+      "path": "douyin-auto-reply/SKILL.md",
+      "sha256": "b4c80075e63a7f60a77909e904ce4945de09d08fb7f12d362f2785bf994b8963",
+      "bytes": 1115
+    },
+    {
+      "path": "douyin-auto-reply/agents/openai.yaml",
+      "sha256": "78bd33713e12e33bd3ac07e62c9559257de598df44018d2f3d579984a6a5da4e",
+      "bytes": 159
+    },
+    {
+      "path": "douyin-creator-scraping/LICENSE",
+      "sha256": "1a070b0924f9eb9b5848f2b4c6214709b5e89d3c46ba29cba4656ab28fd70a73",
+      "bytes": 1069
+    },
+    {
+      "path": "douyin-creator-scraping/SKILL.md",
+      "sha256": "356045bccdfdbf33125ee8fa5cd57c0abe048355a389c641001d678320e9f0b0",
+      "bytes": 1025
+    },
+    {
+      "path": "douyin-creator-scraping/agents/openai.yaml",
+      "sha256": "fd190917d4fa7c76f199e06208d2af7966470e7210be9deb75fd936607e7ff6c",
+      "bytes": 162
+    },
+    {
+      "path": "douyin-video-prediction/LICENSE",
+      "sha256": "1a070b0924f9eb9b5848f2b4c6214709b5e89d3c46ba29cba4656ab28fd70a73",
+      "bytes": 1069
+    },
+    {
+      "path": "douyin-video-prediction/SKILL.md",
+      "sha256": "452469a48c8f0f3b83bc7857489f3e331839ff8b47bc194a59814450225f791a",
+      "bytes": 1157
+    },
+    {
+      "path": "douyin-video-prediction/agents/openai.yaml",
+      "sha256": "c52d8313714f55f8c3ee23bcb2bd30a2c619b788c76edfe62044814ff75426ac",
+      "bytes": 165
+    },
+    {
+      "path": "feishu-douyin-sync/LICENSE",
+      "sha256": "1a070b0924f9eb9b5848f2b4c6214709b5e89d3c46ba29cba4656ab28fd70a73",
+      "bytes": 1069
+    },
+    {
+      "path": "feishu-douyin-sync/SKILL.md",
+      "sha256": "b267d9e8bc141e572c81e7e7a31f8408b7f83e7f09cd533155144325f9da74be",
+      "bytes": 1134
+    },
+    {
+      "path": "feishu-douyin-sync/agents/openai.yaml",
+      "sha256": "32e26c892e232008906742de580fce581dce42e75c036ac26c5927e1cc077492",
+      "bytes": 165
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+interface:
+  display_name: "抖音新视频追踪预测"
+  short_description: "追踪指定作品的指标增长，结合历史样本估算播放层级与限制。"

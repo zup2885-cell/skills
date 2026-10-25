@@ -1,0 +1,3 @@
+interface:
+  display_name: "抖音数据同步飞书"
+  short_description: "把作品快照和新视频追踪同步到已授权飞书表，并检查清理范围。"

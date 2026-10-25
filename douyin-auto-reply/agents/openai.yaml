@@ -1,0 +1,3 @@
+interface:
+  display_name: "抖音评论与回复草稿"
+  short_description: "导出评论并去重分类，生成回复草稿，授权后再批量发送。"

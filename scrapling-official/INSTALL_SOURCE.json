@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/D4Vinci/Scrapling",
+  "revision": "82180a1b3e1835888e4e90bee44963179f1e1ca0",
+  "upstream_path": "agent-skill/Scrapling-Skill",
+  "install_name": "scrapling-official",
+  "version": "0.5",
+  "verified_upstream_files": 25,
+  "cli": "/Users/m3air/.local/bin/scrapling",
+  "python": "/Users/m3air/.local/share/uv/tools/scrapling/bin/python"
+}

@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/Leonxlnx/taste-skill",
+  "revision": "12af471f627f866411b4bd785b19646d3672784c",
+  "upstream_path": "skills/taste-skill",
+  "install_name": "design-taste-frontend",
+  "verified_upstream_files": 39,
+  "runtime": "Node.js >=22 and Chrome/Edge/Chromium"
+}

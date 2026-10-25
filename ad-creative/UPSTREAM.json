@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/coreyhaines31/marketingskills",
+  "commit": "e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b",
+  "path": "skills/ad-creative",
+  "license": "MIT",
+  "skill_sha256": "973244b10730f514ea1ec2c0a4f132d570e55cd3298392b4fc15f8227e5228ba",
+  "integration": "research-only; no script or ad-copy generation"
+}

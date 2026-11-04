@@ -1,0 +1,4 @@
+interface:
+  display_name: "个人立项表简历生成器"
+  short_description: "按个人立项表审核真实经历并生成简历，资料不足时给学生明确补填与继续生成步骤"
+  default_prompt: "请用 $ip-form-resume-builder 读取我的个人立项表，审核资料后生成简历；如果资料不足，请告诉我具体补什么、去哪里找、补好后如何继续。"

@@ -191,6 +191,38 @@ class StoreTests(unittest.TestCase):
         self.assertNotIn("<script>", report)
         self.assertIn("&lt;script&gt;", report)
 
+    def test_report_keeps_actual_question_answer_separate_from_rewrite(self):
+        record = sample()
+        record["source"]["kind"] = "transcript"
+        q = record["questions"][0]
+        q["evidence"] = [
+            {"speaker": "interviewer", "start_line": 2, "end_line": 2, "quote": record["source"]["text"].splitlines()[1]},
+            {"speaker": "candidate", "start_line": 3, "end_line": 3, "quote": record["source"]["text"].splitlines()[2]},
+        ]
+        self.put(record)
+        report = (self.root / "reviews/demo-a.md").read_text()
+        first, rest = report.split("### 2. 你当时怎么答", 1)
+        answer, rest = rest.split("### 3. 问题在哪", 1)
+        diagnosis, rewrite = rest.split("### 4. 下次怎么答", 1)
+        self.assertIn(q["evidence"][0]["quote"], first)
+        self.assertNotIn(q["evidence"][1]["quote"], first)
+        self.assertIn(q["evidence"][1]["quote"], answer)
+        self.assertIn(q["missing"][0], diagnosis)
+        self.assertIn("待补", rewrite)
+        self.assertNotIn("待补", answer)
+
+    def test_legacy_summary_is_not_labeled_as_verbatim(self):
+        self.put(sample())
+        report = (self.root / "reviews/demo-a.md").read_text()
+        self.assertIn("不能当作逐字引用", report)
+        self.assertIn("角色未标注或未确认", report)
+
+    def test_invalid_speaker_rejected(self):
+        record = sample()
+        record["questions"][0]["evidence"][0]["speaker"] = "guessed-person"
+        with self.assertRaisesRegex(store.StoreError, "speaker"):
+            store.validate(record)
+
     def test_corrupt_record_is_reported_without_overwrite(self):
         self.put(sample())
         path = self.root / "records/demo-a.json"

@@ -88,6 +88,7 @@ def validate(record):
         require(isinstance(evidence, list) and evidence, f"{q['id']} 缺少 evidence")
         for ref in evidence:
             require(isinstance(ref, dict), "evidence 须为对象")
+            require(ref.get("speaker", "unknown") in ("interviewer", "candidate", "unknown"), "evidence.speaker 无效")
             start, end = ref.get("start_line"), ref.get("end_line")
             require(type(start) is int and type(end) is int and 1 <= start <= end <= len(lines), "引用行号越界或格式无效")
             require(ref.get("quote") == "\n".join(lines[start - 1:end]), f"{q['id']} 引用与原文不一致")
@@ -198,12 +199,31 @@ def report_link(record):
     return f"[{label(record)}](reviews/{record['session_id']}.md)"
 
 
+def quoted_refs(refs):
+    result = []
+    for ref in sorted(refs, key=lambda item: item["start_line"]):
+        result += [f"L{ref['start_line']}—L{ref['end_line']}：", "", *["> " + escape(line) for line in ref["quote"].splitlines()], ""]
+    return result
+
+
 def report(record):
     result = [f"# {label(record)}", "", escape(record["summary"]), "", f"结果：{OUTCOMES[record['outcome']]}；来源：{KINDS[record['source']['kind']]} / {escape(record['source']['name'])}", "", f"[完整原记录](../records/{record['session_id']}.json)", ""]
     for q in record["questions"]:
-        result += [f"## {q['id']} · {escape(q['question'])}", "", f"本次回答：{escape(q['answer'])}", "", f"状态：{STATUSES[q['status']]}", "", "有效点：" + ("；".join(escape(x) for x in q["worked"]) or "暂无足够证据"), "", "缺口：" + ("；".join(escape(x) for x in q["missing"]) or "暂无明确缺口"), "", "再答一次：", "", escape(q["better_answer"]), "", "原始依据：", ""]
-        for ref in q["evidence"]:
-            result += [f"L{ref['start_line']}—L{ref['end_line']}：", "", *["> " + escape(line) for line in ref["quote"].splitlines()], ""]
+        interviewer = [ref for ref in q["evidence"] if ref.get("speaker") == "interviewer"]
+        candidate = [ref for ref in q["evidence"] if ref.get("speaker") == "candidate"]
+        unknown = [ref for ref in q["evidence"] if ref.get("speaker", "unknown") == "unknown"]
+        result += [f"## {q['id']} · {escape(q['question'])}", "", "### 1. 面试官怎么问", ""]
+        result += quoted_refs(interviewer) if interviewer else [escape(q["question"]), "", "以上为整理后的问题；未标注面试官原话。", ""]
+        result += ["### 2. 你当时怎么答", ""]
+        if candidate:
+            if record["source"]["kind"] == "recall":
+                result += ["以下来自用户回忆，不是录音逐字稿。", ""]
+            result += quoted_refs(candidate) + ["回答摘要：" + escape(q["answer"]), ""]
+        else:
+            result += [escape(q["answer"]), "", "以上为回答摘要；未标注候选人原话，不能当作逐字引用。", ""]
+        result += ["### 3. 问题在哪", "", "答得好的地方：" + ("；".join(escape(x) for x in q["worked"]) or "暂无足够证据"), "", "具体问题与原因：" + ("；".join(escape(x) for x in q["missing"]) or "暂无明确缺口"), "", f"本次证据状态：{STATUSES[q['status']]}", "", "### 4. 下次怎么答", "", escape(q["better_answer"]), ""]
+        if unknown:
+            result += ["补充依据（角色未标注或未确认）：", ""] + quoted_refs(unknown)
     result += ["## 下一场动作", ""] + [f"{i}. {escape(action)}" for i, action in enumerate(record["next_actions"], 1)]
     if not record["next_actions"]:
         result += ["暂无动作；待补材料后确定。"]

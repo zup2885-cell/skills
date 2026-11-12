@@ -1,4 +1,4 @@
 interface:
-  display_name: "面试复盘与经验库"
-  short_description: "逐题复盘真实面试，持续积累高频问题、个人回答和下场准备清单"
-  default_prompt: "用 $interview-review 复盘这场面试，并更新我的问题库、回答库和下场准备清单。"
+  display_name: "面试逐题复盘"
+  short_description: "逐题还原面试官提问和我的回答，指出具体问题，给出下次可直接说的改答"
+  default_prompt: "用 $interview-review 分析这场面试：逐题列出面试官怎么问、我怎么答、问题在哪、下次怎么答，再保存复盘。"

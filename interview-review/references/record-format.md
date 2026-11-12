@@ -51,8 +51,10 @@ python3 "$SKILL_DIR/scripts/store.py" save --input '/经验库/drafts/session.js
       "missing": ["没有说明效果如何验证"],
       "better_answer": "我负责脚本和剪辑。[待补：效果的实际验证依据]",
       "evidence": [
-        {"start_line": 2, "end_line": 2, "quote": "我：我负责脚本和剪辑。"},
-        {"start_line": 4, "end_line": 4, "quote": "我：当时没有记下结果。"}
+        {"speaker": "interviewer", "start_line": 1, "end_line": 1, "quote": "面试官：这个项目你负责什么？"},
+        {"speaker": "candidate", "start_line": 2, "end_line": 2, "quote": "我：我负责脚本和剪辑。"},
+        {"speaker": "interviewer", "start_line": 3, "end_line": 3, "quote": "面试官：怎么判断效果？"},
+        {"speaker": "candidate", "start_line": 4, "end_line": 4, "quote": "我：当时没有记下结果。"}
       ]
     }
   ],
@@ -74,10 +76,12 @@ session_id、question.id、topic_key、story.key 只允许 ASCII 字母、数字
 
 每个 evidence 引用的是完整行区间，quote 必须与该区间逐字一致。要引用某一短句时选择只含该句的原始独立行；不能为了通过校验去改原文分行或改写。更长原始行就保留整行引用。
 
+新记录的每条 evidence 增加 speaker：`interviewer`、`candidate` 或 `unknown`。已有逐字稿时，完整引用本题及追问涉及的双方发言；每条只对应一个已确认的角色。answer 仍是检索摘要，报告先展示 candidate 的实际引用，再附摘要。旧记录可不带 speaker，报告会说明只有整理/摘要，原话角色未标注，不把摘要冒充原话。speaker 校验值域不等于已验证角色判断正确，仍须核对材料。
+
 ## 文件与恢复
 
 - `records/*.json`：每场唯一的原始记录，内含来源全文和分析。
-- `reviews/*.md`：可直接阅读的逐场报告，引用行号。
+- `reviews/*.md`：首要交付的单场逐题报告，固定四项：面试官怎么问、你当时怎么答、问题在哪、下次怎么答，附引用行号。
 - `index.md`：全部场次、结果和报告入口。
 - `question-bank.md`：按考点归类、逐场状态、重复缺口计数和出处。
 - `answer-bank.md`：各场更稳答法与真实案例草稿，保留版本，不自动选唯一标准答案。

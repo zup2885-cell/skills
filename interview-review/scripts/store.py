@@ -232,7 +232,7 @@ def report(record):
 
 def render(records):
     views = {f"reviews/{r['session_id']}.md": report(r) for r in records}
-    index = ["# 面试经验库", "", f"共 {len(records)} 场。日期待补的记录不用于前后趋势判断。", "", "[问题库](question-bank.md) · [回答库](answer-bank.md) · [下场准备](next-interview.md)", ""]
+    index = ["# 面试复盘入口", "", "## 开始一场复盘", "", "在当前 Codex 聊天里点击「开始面试复盘」，再把面试录音拖入聊天。也可以直接发本机录音文件的完整路径。支持 M4A、MP3、WAV；已有文字记录也可以直接粘贴。", "", "收到材料后，逐题给你看：面试官怎么问 → 你当时怎么答 → 具体问题在哪 → 下次怎么答。听不清或说话人不确定的位置会标出来。", "", "也可以在聊天里直接说：用面试逐题复盘分析这份录音。", "", "## 已保存的复盘", "", f"共 {len(records)} 场。日期待补的记录不用于前后趋势判断。", "", "[问题库](question-bank.md) · [回答库](answer-bank.md) · [下场准备](next-interview.md)", ""]
     index += [f"- {report_link(r)} — {OUTCOMES[r['outcome']]}" for r in records]
     if not records:
         index += ["尚无真实面试记录。可以提供逐字稿、笔记或口述回忆开始。"]

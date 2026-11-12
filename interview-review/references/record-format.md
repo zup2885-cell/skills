@@ -78,6 +78,8 @@ session_id、question.id、topic_key、story.key 只允许 ASCII 字母、数字
 
 新记录的每条 evidence 增加 speaker：`interviewer`、`candidate` 或 `unknown`。已有逐字稿时，完整引用本题及追问涉及的双方发言；每条只对应一个已确认的角色。answer 仍是检索摘要，报告先展示 candidate 的实际引用，再附摘要。旧记录可不带 speaker，报告会说明只有整理/摘要，原话角色未标注，不把摘要冒充原话。speaker 校验值域不等于已验证角色判断正确，仍须核对材料。
 
+本地录音输入可在 source 中增加 `file_path`，值为实际转写的录音绝对路径。电脑端工作台会用该路径把已复盘文件移出待分析视图；原录音和元数据仍保留。文字、回忆或不知道原文件位置时省略，不能填一个猜测路径。
+
 ## 文件与恢复
 
 - `records/*.json`：每场唯一的原始记录，内含来源全文和分析。
